@@ -21,7 +21,7 @@ import br.com.vidracaria.domain.model.Cliente;
 import br.com.vidracaria.domain.model.Lancamento;
 import br.com.vidracaria.domain.service.LancamentoService;
 
-@CrossOrigin(origins = "http://localhost:4201,https://app-receitadespesa.herokuapp.com")
+@CrossOrigin(origins = "https://app-receitadespesa.herokuapp.com")
 @RestController
 @RequestMapping("/lancamentos")
 public class LancamentoController {
