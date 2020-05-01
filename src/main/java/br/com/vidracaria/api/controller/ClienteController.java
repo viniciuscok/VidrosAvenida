@@ -24,7 +24,7 @@ import br.com.vidracaria.domain.model.Cliente;
 import br.com.vidracaria.domain.repository.ClienteRepository;
 import br.com.vidracaria.domain.service.ClienteService;
 
-@CrossOrigin(origins = "http://localhost:4201,https://app-receitadespesa.herokuapp.com")
+@CrossOrigin(origins = "https://app-receitadespesa.herokuapp.com")
 @RequestMapping("/clientes")
 @RestController
 public class ClienteController {
