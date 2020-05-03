@@ -42,8 +42,7 @@ INSERT INTO estado (id, nome, sigla) VALUES
 (26, 'São Paulo', 'SP'),
 (27, 'Tocantins', 'TO');
 
--- CIDADES --
--- INSERT INTO cidade (nome, id_estado) VALUES
+
 INSERT INTO cidade (nome, id_estado) VALUES
 ( 'Afonso Cláudio', 8),
 ( 'Água Doce do Norte', 8),
