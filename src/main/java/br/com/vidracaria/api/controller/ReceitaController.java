@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.vidracaria.domain.model.Receita;
 import br.com.vidracaria.domain.service.ReceitaService;
 
-@CrossOrigin(origins = "https://app-receitadespesa.herokuapp.com")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/receitas")
 public class ReceitaController {

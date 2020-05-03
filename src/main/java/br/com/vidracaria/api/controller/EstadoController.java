@@ -20,61 +20,66 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.vidracaria.domain.model.Cliente;
-import br.com.vidracaria.domain.repository.ClienteRepository;
-import br.com.vidracaria.domain.service.ClienteService;
+import br.com.vidracaria.domain.model.Estado;
+import br.com.vidracaria.domain.repository.EstadoRepository;
+import br.com.vidracaria.domain.service.EstadoService;
 
 @CrossOrigin(origins = "*")
-@RequestMapping("/clientes")
+@RequestMapping("/estados")
 @RestController
-public class ClienteController {
+public class EstadoController {
 	
 	@Autowired
-	private ClienteService clienteService;
+	private EstadoService estadoService;
 	
 	@Autowired
-	private ClienteRepository clienteRepository;
+	private EstadoRepository estadoRepository;
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Cliente salvar(@Valid @RequestBody Cliente cliente) {
-		return clienteService.salvar(cliente);
+	public Estado salvar(@Valid @RequestBody Estado estado) {
+		return estadoService.salvar(estado);
 	}
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<Cliente> buscarTodos() {
-		return clienteService.buscarTodos();
+	public List<Estado> buscarTodos() {
+		return estadoService.buscarTodos();
 	}
 	
 //	@GetMapping
 //	@ResponseStatus(code = HttpStatus.OK)
-//	public Page<Cliente> buscarTodos() {
-//		return clienteService.buscarTodosComPagina();
+//	public Page<Estado> buscarTodos() {
+//		return estadoService.buscarTodosComPagina();
 //	}
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public Cliente atualizar(@RequestBody Cliente cliente, @PathVariable Long id) {
-		Cliente clienteBanco = clienteService.buscarPorId(id);
+	public Estado atualizar(@RequestBody Estado estado, @PathVariable Long id) {
+		Estado estadoBanco = estadoService.buscarPorId(id);
 		
-		clienteBanco.setNome(cliente.getNome());
-		clienteBanco.setCpf(cliente.getCpf());
-		clienteBanco.setEndereco(cliente.getEndereco());
+		estadoBanco.setNome(estado.getNome());
+		estadoBanco.setSigla(estado.getSigla());
 		
-		return clienteService.salvar(clienteBanco);
+		return estadoService.salvar(estadoBanco);
 	}
 	
-	@GetMapping("/{id}")
+//	@GetMapping("/{id}")
+//	@ResponseStatus(code = HttpStatus.OK)
+//	public Estado buscarPorId(@PathVariable Long id) {
+//		return estadoService.buscarPorId(id);
+//	}
+	
+	@GetMapping("/{sigla}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public Cliente buscarPorId(@PathVariable Long id) {
-		return clienteService.buscarPorId(id);
+	public Estado buscarPorSigla(@PathVariable String sigla) {
+		return estadoService.buscarPorSigla(sigla);
 	}
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
-		clienteService.delete(id);
+		estadoService.delete(id);
 	}
 
 }

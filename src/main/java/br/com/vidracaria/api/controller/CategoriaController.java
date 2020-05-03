@@ -22,7 +22,7 @@ import br.com.vidracaria.domain.model.Categoria;
 import br.com.vidracaria.domain.model.TipoCategoria;
 import br.com.vidracaria.domain.service.CategoriaService;
 
-@CrossOrigin(origins = "https://app-receitadespesa.herokuapp.com")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {

@@ -1,6 +1,8 @@
 package br.com.vidracaria.domain.model;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -9,9 +11,16 @@ import lombok.Data;
 public class Endereco {
 	private String logradouro;
 	private String numero;
+	private String comlemento;
 	private String cep;
 	private String bairro;
-	private String Cidade;
-	private String estado;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_cidade")
+	private Cidade Cidade;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_estado")
+	private Estado estado;
 
 }

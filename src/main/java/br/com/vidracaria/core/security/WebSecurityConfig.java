@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.httpBasic()
 			.and().authorizeRequests() //autorizando as requisições
-			//.antMatchers("/produtos", "/lancamentos", "/lancamentos/{id}").permitAll() //Permissão para acessar sem está authenticado
+			.antMatchers("/estados/{sigla}", "/estados", "/lancamentos/{id}").permitAll() //Permissão para acessar sem está authenticado
 			.anyRequest().authenticated() //para todas as requisições devemos está autheticado.
 			.and().cors()
 			.and().sessionManagement()

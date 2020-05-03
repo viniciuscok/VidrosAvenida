@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.vidracaria.domain.model.Despesa;
 import br.com.vidracaria.domain.service.DespesaService;
-
-@CrossOrigin(origins = "https://app-receitadespesa.herokuapp.com")
+//https://app-receitadespesa.herokuapp.com
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/despesas")
 public class DespesaController {
