@@ -34,7 +34,7 @@ public class CidadeService {
 		return this.cidadeRepository.findByEstadoId(id);
 	}
 	
-	public Cidade buscarPorNome(String nome) {
-		return this.cidadeRepository.findByNomeStartingWithIgnoreCase(nome);
+	public Cidade buscarPorNome(String nomeCidade, String siglaEstado) {
+		return this.cidadeRepository.findByNomeStartingWithIgnoreCaseAndEstadoSigla(nomeCidade, siglaEstado);
 	}
 }

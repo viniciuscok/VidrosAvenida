@@ -11,6 +11,8 @@ import br.com.vidracaria.domain.model.Cidade;
 public interface CidadeRepository extends JpaRepository<Cidade, Long>{
 	
 	List<Cidade> findByEstadoId(Long id);
-	Cidade findByNomeStartingWithIgnoreCase(String nome);
+	
+	Cidade findByNomeStartingWithIgnoreCaseAndEstadoSigla(String nomeCidade, String siglaEstado);
 
+	//findByNomeStartingWithIgnoreCaseAndEstadoId
 }

@@ -47,16 +47,16 @@ public class CidadeController {
 		this.cidadeService.delete(id);
 	}
 	
-	@GetMapping("/id/{id}")
+	@GetMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<Cidade> teste(@PathVariable Long id) {
+	public List<Cidade> tesbuscarPorId(@PathVariable Long id) {
 		return this.cidadeService.buscarPeloEstado(id);
 	}
 	
-	@GetMapping("/nome/{nomeCidade}")
+	@GetMapping("/{siglaEstado}/{nomeCidade}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public Cidade buscarPorNome(@PathVariable String nomeCidade) {
-		return this.cidadeService.buscarPorNome(nomeCidade);
+	public Cidade buscarPorNome(@PathVariable String nomeCidade, @PathVariable String siglaEstado) {
+		return this.cidadeService.buscarPorNome(nomeCidade, siglaEstado);
 	}
 	
 	
