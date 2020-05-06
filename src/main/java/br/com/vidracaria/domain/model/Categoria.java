@@ -18,6 +18,7 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	private String nome;
 	
 	@Enumerated(EnumType.STRING)
