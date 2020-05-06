@@ -49,7 +49,7 @@ public class CidadeController {
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<Cidade> tesbuscarPorId(@PathVariable Long id) {
+	public List<Cidade> buscarPorId(@PathVariable Long id) {
 		return this.cidadeService.buscarPeloEstado(id);
 	}
 	
