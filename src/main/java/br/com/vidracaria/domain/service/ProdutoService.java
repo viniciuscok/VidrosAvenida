@@ -21,5 +21,9 @@ public class ProdutoService {
 	public List<Produto> buscarTodos() {
 		return produtoRepository.findAll();
 	}
+	
+	public Produto buscarPorId(Long produtoId) {
+		return produtoRepository.findById(produtoId).orElseThrow(() -> new RuntimeException("não foi possível encontrar o produto"));
+	}
 
 }

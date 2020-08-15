@@ -71,8 +71,9 @@ public class CategoriaController {
 	public Categoria atualizar(@RequestBody Categoria categoria, @PathVariable Long id) {
 		Categoria categoriaBanco = this.categoriaService.buscarPorId(id);
 		categoriaBanco.setNome(categoria.getNome());
-		categoriaBanco.setTipoCategoria(categoria.getTipoCategoria());
-		categoriaBanco.setObservaçao(categoria.getObservaçao());
+		//categoriaBanco.setTipoCategoria(categoria.getTipoCategoria());
+		categoriaBanco.setSubCategoria(categoria.getSubCategoria());
+		categoriaBanco.setObservacao(categoria.getObservacao());
 		
 		return this.categoriaService.salvar(categoriaBanco);
 	}
