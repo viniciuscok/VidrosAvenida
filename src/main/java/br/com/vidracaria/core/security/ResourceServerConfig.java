@@ -23,6 +23,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests() //autorizando as requisições
 				.anyRequest().authenticated() //para todas as requisições devemos está autheticado.
 			.and()
+				.csrf().disable()
 				.cors()
 			.and()
 				.oauth2ResourceServer().jwt();
