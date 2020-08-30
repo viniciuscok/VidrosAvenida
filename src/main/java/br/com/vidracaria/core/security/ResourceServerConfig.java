@@ -37,7 +37,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 //				.oauth2ResourceServer().jwt();
 		http
 		.authorizeRequests() //autorizando as requisições
-			.antMatchers("/oauth/**","/subCategoria").permitAll()
+			.antMatchers("/oauth/**","/subCategorias", "/swagger-ui.html").permitAll()
 			.anyRequest().authenticated() //para todas as requisições devemos está autheticado.
 		.and()
 			.csrf().disable()
