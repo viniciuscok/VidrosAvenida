@@ -23,6 +23,7 @@ public class CorsConfig {
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		//source.registerCorsConfiguration("/oauth/token", config);
+		//source.registerCorsConfiguration("https://app-receitadespesa.herokuapp.com/**", config);
 		source.registerCorsConfiguration("/**", config);
 
 		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>();
