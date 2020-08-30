@@ -52,6 +52,18 @@ public class ReceitaController {
 		return this.receitaService.buscarPorId(id);
 	}
 	
+	@GetMapping("/valorTotal")
+	@ResponseStatus(code = HttpStatus.OK)
+	public int buscarValorTotal() {
+		return this.receitaService.buscarValor();
+	}
+	
+	@GetMapping("/saldoTotal")
+	@ResponseStatus(code = HttpStatus.OK)
+	public int buscarSaldoTotal() {
+		return this.receitaService.totaldespesaReceita();
+	}
+	
 	@PutMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public Receita atualizar(@RequestBody Receita receita, @PathVariable Long id) {

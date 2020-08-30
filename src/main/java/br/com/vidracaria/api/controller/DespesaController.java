@@ -52,6 +52,12 @@ public class DespesaController {
 		return this.despesaService.buscarPorId(id);
 	}
 	
+	@GetMapping("/valorTotal")
+	@ResponseStatus(code = HttpStatus.OK)
+	public int buscarValorTotal() {
+		return this.despesaService.buscarValor();
+	}
+	
 	@PutMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public Despesa atualizar(@RequestBody Despesa despesa, @PathVariable Long id) {

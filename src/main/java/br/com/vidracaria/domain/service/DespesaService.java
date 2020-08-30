@@ -33,4 +33,8 @@ public class DespesaService {
 	public Despesa buscarPorId(Long id) {
 		return this.despesaRepository.findById(id).get();
 	}
+	
+	public int buscarValor() {
+		return this.despesaRepository.valorTotal();
+	}
 }
